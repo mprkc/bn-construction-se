@@ -1,0 +1,283 @@
+\section{Methods and Detailed Application Examples}
+\label{supp:methods}
+
+\added[id=A]{This section presents methods extracted from the studies that met the catalog inclusion threshold. For each construction phase, the methods are described alongside examples of their reported application. Studies often combine methods within an activity; their inclusion here records their use rather than establishing their suitability for every modeling context.}
+
+\added[id=A]{The scope of this analysis extends substantially beyond our previous mapping study~\cite{rique2025constructing}, which focused specifically on methods for constructing the structure of expert-based BNs in SE. The present study considers both expert-based and hybrid BNs and organizes the identified methods according to the complete set of construction activities defined in the checklist, encompassing structure building, parameter estimation, and model validation. Methods previously identified in~\cite{rique2025constructing} are intentionally retained and integrated with the additional evidence to provide a self-contained catalog covering the complete BN construction process.}
+
+\subsection{Structure Building}
+
+The methods identified for performing the four activities related to the \textbf{structure building} phase are described next. We observed that during this construction phase, the application domain (i.e., SE) strongly influences the choice of modeling methods, particularly the types of reasoning employed.
+
+\vspace*{0.5\baselineskip}
+
+\textbf{Methods for identifying variables and relationships.} The activities of identifying variables and relationships are closely intertwined during structure building, often occurring in parallel. Therefore, they are addressed jointly to avoid redundant method descriptions. Extending the classification scheme proposed by Rique et al.~\cite{rique2025constructing}, we inductively classified the identified methods into three dimensions: knowledge acquisition, reasoning mechanisms, and automatic construction.
+
+The \textbf{knowledge acquisition} dimension comprises methods for collecting and analyzing data related to domain experts' experience and viewpoints, as well as findings from the literature on SE aspects relevant to the construction of a BN structure. It also includes the analysis of software data and artifacts. Table~\ref{tab:knowledge-acquisition-methods} lists the methods within the knowledge acquisition dimension, which are described below:
+
+\begin{table}[t]
+\caption{Knowledge acquisition methods used for the identification of variables (Activity 1.1) and relationships (Activity 1.3)}
+\label{tab:knowledge-acquisition-methods}
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.26\linewidth}
+                              >{\raggedright\arraybackslash}X
+                              >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Method} & \textbf{1.1: Variables} & \textbf{1.3: Relationships} \\
+\midrule
+Interviews
+& S1, S3, S5, S24, S26, S67, S74, S81, S107, S111
+& S1, S8, S24, S26, S74, S81, S107 \\
+Focus groups
+& S3--S6, S27, S75, S81, S114
+& S3--S6, S27, S75, S81 \\
+Survey with practitioners
+& S103, S104, S114
+& S67, S103, S104, S107, S108, S111 \\
+Literature review
+& S2, S4, S6--S8, S10, S14, S20, S21, S25, S27, S29, S33, S35--S38, S44, S52, S54, S58, S67, S68, S72, S73, S75--S78, S80, S85, S87, S92--S94, S96, S101, S104, S107, S108, S111, S113
+& S2, S4, S6, S7, S20, S21, S25, S27, S29, S33, S35--S38, S40, S44, S52, S58, S68, S72, S73, S75--S78, S80, S85, S87, S92--S94, S96, S101, S104 \\
+Selection of variables from a dataset
+& S4, S6, S38, S40
+& --- \\
+Delphi method
+& S7
+& S7 \\
+Abstraction sheets
+& S1
+& S1 \\
+Grounded theory
+& S3, S5, S74, S103, S104
+& S74, S103, S104 \\
+Statistical analysis
+& ---
+& S20, S54 \\
+Software analysis
+& S59
+& S59 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textit{Interviews.} Interviews are a widely used method in SE for eliciting expert knowledge. This method relies on individuals with experience across various aspects of software development. After interviews are conducted, the collected data are typically analyzed to extract meaningful insights and patterns. Such analysis can help identify common themes, trends, and valuable information shared by experts. The analysis of interview data aims to identify relevant variables and relationships that delineate the DAG of the BN modeling the SE problem under consideration. Some studies used interviews with a rigorous, systematic approach, analyzing the collected data with well-established coding techniques from the qualitative research literature (e.g., S3 and S5). Another example is S8, in which the authors interviewed a domain expert to derive relationships among factors identified in an SLR. As a method for eliciting expert knowledge that underpins model construction, it is essential that the data from the interview process be appropriately analyzed.
+
+\textit{Focus groups.} Using focus groups to elicit expert knowledge involves bringing together a group of subject-matter experts to collaboratively discuss specific topics or issues related to software development. As in the study by Rique et al.~\cite{rique2025constructing}, this study considers workshops, expert panels, and brainstorming sessions as focus groups, given their shared emphasis on group interaction and discussion. The studies applied focus groups mainly in two ways: to elicit and validate factors and relationships. For example, S3 demonstrated the versatility of focus groups in both applications. The authors used focus groups to complement the knowledge elicitation process by discussing and reaching consensus on a set of value factors initially identified through interviews. Also, they validated the BN structure through focus groups with experts. Another example is S114, in which the authors consulted experts to identify relevant model factors through a questionnaire and brainstorming sessions.
+
+\textit{Survey with practitioners.} When it comes to eliciting expert knowledge to construct BN structures, surveys serve as a valuable method for capturing practitioners' opinions and experiences in a structured and quantifiable manner. Survey questions are carefully designed to address specific aspects of interest, such as factors influencing decision-making or dependencies among different variables. We observed that surveys can be used across different activities. Regarding the identification of variables and relationships, the authors of S104 constructed a BN across multiple companies by analyzing and coding textual data from a survey containing practitioners' responses about \added[id=A]{what they perceived as the main causes and effects of requirements engineering problems}. The authors of S67 \added[id=A]{collected questionnaire data to inform proposed cause-effect relationships among factors} extracted from a literature review and interviews with domain experts.
+
+\textit{Literature review.} Another common way of constructing BN structures is using the literature review method. Software researchers and practitioners rely on evidence from existing literature to reason about variables and relationships to be incorporated into their models. The notion of literature review considered here encompasses different approaches, as described in Rique et al.~\cite{rique2025constructing}. It may refer to searching for insights or structured knowledge in the scientific literature (e.g., S25), guidelines (e.g., S7), reports and standards (e.g., S101), or a more rigorous approach involving an SLR (e.g., S72). The authors of S7 constructed BNs to assess Scrum-based software development methods and explored the Scrum Guide to build their structures. For model construction in S101, the IEEE Standard 1012 (V\&V) was used primarily to identify attributes and their associated activities, along with several other reports and standards, including IEC 60880, DO-178C, NUREG/CR-6101, and BTP-14. In contrast, the authors of S72 conducted an SLR that identified more than 50 attributes across different categories influencing user story estimation. Thus, notable differences can be observed in how this method is applied and reported across studies.
+
+\textit{Selection of variables from a dataset.} The initial structure of a BN can be outlined based on the selection of variables from existing datasets relevant to the SE problem being addressed. Drawing on their prior experience in building BN models, the authors of S4 used the variables from the Tukutuku project as a starting point to identify the factors domain experts consider when estimating effort in Web applications. After the knowledge engineer outlined and explained the variables, the domain experts suggested removing irrelevant variables and adding new ones. Another example is S38, in which the authors used variables from the COCOMO II model and existing studies to propose a causal model for software effort prediction. Similarly, S40 constructed a BN for productivity estimation based on the cost factors of COCOMO 81.
+
+\textit{Delphi method.} Researchers can use the Delphi method to make the process of eliciting expert knowledge more systematic and less biased when compared to approaches such as focus groups. The authors of S7 decomposed the nodes of their BN into initial elements representing the main software process factors, which were then presented to the experts. Subsequently, the authors applied the Delphi method to refine these sets of elements through individual rounds of discussion, thereby influencing the model's variables and relationships.
+
+\textit{Abstraction sheets.} S1 used abstraction sheets as a support tool for interviews within the Goal-Question-Metric (GQM) process, serving to identify the variables and relationships of the BN. Through their quadrants, relevant questions and metrics corresponding to the quality focus --- affected by variation factors given the defined goal --- were extracted. In this way, abstraction sheets provided a structured mechanism for translating expert knowledge into model elements and dependencies.
+
+\textit{Grounded Theory.} Grounded Theory (GT) is a qualitative research methodology often used to develop theories through the systematic analysis of data without preconceived notions or predefined structures~\cite{urquhart2022grounded}. Researchers collect data using different methods, such as interviews, observations, and open-ended surveys. In the context of SE, both full GT studies aimed at theory generation and applications of GT principles for qualitative data analysis can be found. The results of both approaches have been used to construct BNs' DAGs. For example, the authors of S74 built the core fragment of their BN model using results from a full GT study that interviewed twenty-five practitioners from ten organizations. The authors of S103 relied on survey data that were manually coded following GT principles. Thus, GT plays an important role in the construction of expert-based BN structures, as it helps identify relevant variables represented by the key concepts and categories that emerge from qualitative data. The relationships among these variables are explored and defined based on a grounded understanding of the SE phenomenon under study. By contrast, S5 collected interview data that were analyzed using GT principles. The resulting codes represented factors to be used as part of the DAG construction phase. The analysis results were then used in a focus group, where experts suggested removing irrelevant factors or adding new ones to the model.
+
+\textit{Statistical analysis.} \added[id=A]{Domain experts may use statistical analyses to identify associations among variables and inform the BN structure.} Due to data issues, a sensible strategy is to build the model incorporating expert knowledge and judgment about the statistical analysis results, instead of automatically generating the model from the data. \added[id=A]{In S20, chi-plot independence tests informed the relationships in the hybrid model; such tests do not by themselves establish cause-effect relationships.} To explore the relationship between multiple project metrics and different fault categories, the authors of S54 conducted a bivariate correlation analysis (Spearman correlation). 
+
+\textit{Software analysis.} Experts may reflect on the results of software analysis, such as static and/or dynamic analyses, to identify variables and relationships. For example, S59 employed static analysis to extract information about software elements' dependencies, which served as the basis for constructing the graphical structure of the models.
+
+The \textbf{reasoning mechanisms} dimension comprises methods that support domain experts in establishing the types of reasoning appropriate to the relationships they intend to use to model the DAG. In addition, it involves the use of techniques to guide experts' reasoning towards specific SE aspects on which they wish to focus, or to assist in the application of concepts inherent to BN modeling. Table~\ref{tab:reasoning-mechanisms-methods} presents the methods within the reasoning mechanisms dimension, which are described next.
+
+\begin{table}[t]
+\caption{Reasoning mechanisms used for the identification of variables (Activity 1.1) and relationships (Activity 1.3)}
+\label{tab:reasoning-mechanisms-methods}
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.32\linewidth}
+                              >{\raggedright\arraybackslash}X
+                              >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Method} & \textbf{1.1: Variables} & \textbf{1.3: Relationships} \\
+\midrule
+Idioms
+& S7, S20, S48, S81, S85, S93
+& S7, S20, S48, S81, S85, S93 \\
+Divorcing
+& ---
+& S3--S6, S85, S87 \\
+D-separation
+& ---
+& S4, S12, S94 \\
+Life cycle model (SDLC)
+& S14, S23, S27--S29, S31, S94, S95, S101
+& S14, S23, S27--S29, S31, S94, S95, S101 \\
+Risk-centric modeling
+& S67, S74, S78, S93, S104, S107, S108
+& S67, S74, S78, S93, S104, S107, S108 \\
+GQM paradigm
+& S1, S10, S12, S18, S81, S85
+& S1, S10, S12, S18, S81, S85 \\
+Top-down approach
+& S7, S8, S73
+& S7, S8, S73 \\
+Quality model
+& S53, S75, S88
+& S53, S75, S88 \\
+Value model
+& S3
+& S3 \\
+Argumentation model
+& S43
+& S43 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textit{Idioms.} The use of idioms for constructing BN structures is based on the concept of ``building blocks'' that function as solution patterns. Idioms describe distinct BN fragments that embody generic forms of uncertain reasoning employed by experts during model construction and can be integrated to form more comprehensive BNs~\cite{neil2000building}. As such, they are closely related to the identification of variables and relationships in the models. Only a few studies explicitly mentioned the use of idioms to construct BNs. Rique et al.~\cite{rique2025constructing} identified the types of idioms applied in each study of their mapping and found that the most commonly used in the SE domain are the cause-consequence idiom (e.g., S20, S48, and S81), the definitional/synthesis idiom (e.g., S7 and S20), and the measurement idiom (e.g., S48 and S81).
+
+\textit{Divorcing.} Technique used in BN construction whereby additional variables are introduced into the model to reduce the size of probability distributions and/or keep the network structure simpler. For example, in S4, the knowledge engineer used divorcing as an optimization procedure when she assumed that the final network structure had already been obtained, but still needed to reduce the number of probabilities to be elicited or learned. Another example is S85, which presents a BN-based approach for assessing the quality of Web applications. The authors collected and refined quality characteristics, constructed the model structure based on them, and derived the model parameters. However, because a node with 9 parents existed within a subnetwork of the model, it was necessary to restructure this subnetwork to avoid a combinatorial explosion during CPT elicitation. This was achieved by creating synthetic nodes to simplify the BN fragment. Therefore, divorcing is related to the structuring of relationships among variables, as it modifies how dependencies are modeled to simplify the network.
+
+\added[id=A]{\textit{D-separation.} D-separation identifies conditional independences implied by a BN's graph. Examining these independences helps modelers assess whether the structure is consistent with their domain assumptions about how evidence should inform beliefs about other variables~\cite{mendes2012applying}. This is a check of the model's probabilistic structure, not a test establishing causality. Examples of studies that mention this approach include S4, S12, and S94.}
+
+\textit{Life cycle model.} A common reasoning framework for constructing BNs is using the structured phases of the Software Development Life Cycle (SDLC) as a reference. Its application supports the identification of variables and relationships. This framework models the risks, tasks, and outcomes associated with each phase of software development, from requirements elicitation and design to implementation and maintenance. BNs constructed using this framework reflect the sequential or iterative nature of software projects and aim to manage uncertainty and risk at each life cycle phase. For example, S27 modeled the waterfall life cycle to predict software defects early in the development process. The cause-consequence idiom was used to model the relationships among key life cycle factors, while the definitional/synthesis idiom was used to organize the BN into subnetworks for key SDLC processes, such as ``specification and documentation,'' ``design and development,'' and ``testing and rework.'' In addition, indicator nodes were used to assess the quality of different processes; for instance, for ``testing process quality,'' the suggested indicators included ``quality of documented test cases,'' ``testing process well defined,'' and ``testing staff experience.''
+
+\textit{Risk-centric modeling.} Some studies adopted a risk-centric modeling framework as the basis for constructing the DAG, delineating its variables and relationships. This framework focuses on the direct relationships and interactions among risk elements, such as threats, vulnerabilities, controls, and impacts. BNs built using this framework aim to capture and quantify the probabilistic dependencies among these risk factors, \added[id=A]{supporting predictions of risk conditional on specified technologies and mitigation strategies}. For example, S74 constructed a BN to predict risks in software projects given the technologies used (i.e., risk drivers) and the mitigation strategies employed. For this purpose, the definitional/synthesis idiom was applied to organize a hierarchical risk structure (e.g., ``integration risks'' and ``environment risks'' as parent nodes of ``infrastructure risks''). In addition, the cause-consequence idiom was employed to \added[id=A]{represent hypothesized cause-effect relationships between technologies} (e.g., ``JWT'' and ``Keystore'') and mitigation strategies (e.g., ``offline data persistence'') and risk factors (e.g., ``security risks'').
+
+\textit{GQM paradigm.} The Goal-Question-Metric (GQM) paradigm guides experts' reasoning when conceptualizing the BN structure through a goal-oriented approach, defining the model's variables and relationships. 
+For example, S1 used the GQM paradigm with experts to select software metrics for its model by employing indicator nodes. Another example is S18. Because the problem definition and the main key performance indicators (KPIs) are derived from the model's initial goal, the authors applied the GQM paradigm to identify relevant KPIs (i.e., definitional/synthesis idiom) and their relationships (i.e., cause-consequence idiom) to construct the causal structure of the proposed BN. S85 presented an approach for modeling the quality of Web applications using BNs. The authors gathered quality criteria specific to Web applications from existing work and refined them by applying the GQM paradigm, which reduced subjectivity and improved rigor through structured reasoning when confirming the selection of subcriteria and identifying metrics for the model. Thus, the authors of S85 used the criteria collected and refined through the GQM process to construct the graphical structure of the model, as they represented the BN nodes.
+
+\textit{Top-down approach.} The variables and relationships of a BN structure can be identified by employing a top-down approach (e.g., S7 and S8). In both cases, the authors identified a top-level target node (i.e., process quality in S7 and teamwork quality in S8) and decomposed it into factors observed by the models' users, in a manner similar to the GQM paradigm, where goals are decomposed into questions and subsequently into metrics. The application of this approach led to the use of the definitional/synthesis and cause-consequence idioms. For example, in S7, the definitional/synthesis idiom was applied to decompose a node representing the personal characteristics of the Product Owner, a Scrum role, into multiple nodes (e.g., communicator and negotiator). Also, the cause-consequence idiom was employed to \added[id=A]{represent hypothesized effects of the Product Owner on the Product Backlog's quality and of the Product Backlog's quality on the effectiveness of Sprint Planning events}.
+
+\textit{Quality model.} Quality attributes such as reliability, usability, performance, and maintainability are used as primary nodes in a BN. For example, S75 adopted this approach to identify the model's variables and relationships. The authors focused on estimating strategic software indicators (e.g., ``product quality'') by decomposing them into quality factors (e.g., ``code quality,'' ``testing status,'' and ``software stability'') that were, in turn, decomposed into measures using the definitional/synthesis idiom. 
+
+\textit{Value model.} S3 constructed BNs by modeling the various factors and their interdependencies that contribute to the overall value delivered by a software system or project. The authors used the cause-consequence idiom to \added[id=A]{represent hypothesized effects of value factors on the delivered value}. A common scenario involved a BN including multiple value dimensions (i.e., nodes), such as ``market competitiveness,'' ``customer satisfaction,'' ``business value,'' and ``cost efficiency.'' As a result, these value dimensions were aggregated into an ``overall value'' node using the definitional/synthesis idiom.
+
+\textit{Argumentation model.} S43 applied an argumentation model to represent the logical structure of composite arguments --- referred to as multilegged arguments --- that support dependability claims in software-based systems, particularly in safety-critical contexts. Each ``leg'' of the argument represents a distinct line of reasoning (e.g., statistical testing or formal verification), along with its associated evidence, assumptions, and uncertainties. The BN models the probabilistic relationships among these different argumentative lines, the supporting elements (such as the correctness of the specification or the test oracle), and the degree of confidence assigned to the main claim (e.g., that the system's probability of failure is below a certain threshold). The model enables the formal combination of different sources of evidence and allows exploration of how dependencies or correlations among elements affect the overall confidence in the argument.
+
+The \textbf{automatic construction} dimension considers methods that automatically build the DAG from data using structure learning algorithms. It is important to note that, since our study does not focus on purely data-driven models, the model structures resulting from the automatic construction process \added[id=A]{involved input from domain experts}. \added[id=A]{A structure learned from observational data is not automatically a causal model; causal interpretation requires additional assumptions about the data-generating process and the variables represented~\cite{heckerman1995a}.} The methods within the automatic construction dimension are presented in Table~\ref{tab:metodos_construcao_automatica} and described next.
+
+\begin{table}[t]
+\caption{Automatic construction methods used for the identification of variables (Activity 1.1) and relationships (Activity 1.3)}
+\label{tab:metodos_construcao_automatica}
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.34\linewidth}
+                              >{\raggedright\arraybackslash}X
+                              >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Method} & \textbf{1.1: Variables} & \textbf{1.3: Relationships} \\
+\midrule
+K2 algorithm
+& S110
+& S110, S114 \\
+NPC algorithm
+& S113
+& S113 \\
+Cheng's algorithm
+& ---
+& S107, S108 \\
+V-structure discovery algorithm
+& ---
+& S108 \\
+Learning from data using an automated tool
+& S116, S118
+& S3, S111, S116, S118 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textit{K2 algorithm.} One of the earliest algorithms developed for BN structure learning is K2, proposed by Cooper and Herskovits~\cite{cooper1992bayesian} in 1992. This algorithm assumes that a predefined ordering among the nodes is available. Following this ordering, K2 iterates through the list of variables and greedily adds connections (edges) from candidate parent nodes that precede the current node in the order, aiming to maximize the K2 score~\cite{kitson2023survey}. In S110, the authors applied the K2 algorithm to a dataset. Although the resulting structure suggested interesting relationships among the variables, intuition-based refinement was required, during which some nodes were included, and others were excluded. In S114, the authors consulted experts using a questionnaire and brainstorming sessions to identify factors that may influence the software schedule at each development phase. When constructing the structure automatically, data imprecision may cause some relationships to be omitted or may link nodes that are in fact unrelated. For this reason, the authors defined several rules based on domain knowledge or common sense. In the software schedule model, certain nodes can be specified as having cause-effect relationships, whereas others can be specified as having no relationship. For example, one may assume that coding process quality is strongly related to programmer experience, or that staff turnover rate is unrelated to coding complexity. These relationships therefore define an ordering among nodes and were incorporated into the K2 algorithm during structure construction.
+
+\textit{NPC algorithm.} The Necessary Path Condition (NPC) algorithm is a constraint-based structure learning algorithm aimed at causal networks. From the data, the algorithm extracts statements of independence and conditional dependence among variables. Even when data are limited and subject to sampling noise, the algorithm identifies inconsistencies in these relationships and searches for all BNs with the minimum number of edges that still represent as many of the extracted statements as possible~\cite{steck1999bayesian}. S113 used the NPC algorithm to automatically construct the BN structure, which was subsequently validated by a domain expert, leading to the addition and removal of relationships among certain nodes.
+
+\textit{Cheng's algorithm.} S108 used Cheng's algorithm~\cite{cheng2002learning} to construct the model structure. This algorithm consists of three phases: drafting, thickening, and thinning. Expert knowledge is incorporated into the process in the form of partial ordering constraints on the edge orientation among variables. \added[id=A]{In addition, edges given a causal interpretation are inserted as existence constraints}, i.e., as mandatory connections in the final structure. Finally, the complete BN is learned automatically based on the full set of samples collected from a questionnaire answered by practitioners.
+
+\textit{V-structure discovery algorithm.} Cheng's algorithm, used in S108, \added[id=A]{treats selected edges with a proposed causal interpretation as mandatory connections} that must be present in the structure of a BN for software project risk analysis. To identify these connections, the V-structure discovery algorithm was applied to the collected samples. As a result, ten V-structures were identified, covering fourteen risk factors and two project outcomes. These structures were then connected to one another \added[id=A]{to form a candidate causal network by linking structures that share a common node. The procedure therefore targets local causal hypotheses, rather than a complete BN, using observational data.}
+
+\textit{Learning from data using an automated tool.} Some studies constructed the graphical structure automatically using a BN tool but did not provide details about the specific method used. This is the case of S116, which used one of the information theory-based algorithms available in the Bayesian Network Power Constructor (BNPC) tool to build the BN structure using partial node ordering information provided by experts. Another example is S111, which also used the BNPC tool to learn an initial structure from data that was subsequently refined by domain experts.
+
+\vspace*{0.5\baselineskip}
+
+\textbf{Methods for identifying node values/states.} To ensure terminological clarity in presenting the methods used to identify node values/states, it is necessary to distinguish between the concepts of variable and data. In this study, the term ``variable'' is used as a synonym for a BN node, corresponding to an explicitly modeled concept whose nature (discrete or continuous) is defined a priori. Data, in turn, refer to the empirical information associated with these variables and may be continuous or categorical. Based on this distinction, three main approaches to defining node states were identified.
+
+The first approach, referred to as expert-derived categories/thresholds, applies when the discrete states of a variable are defined directly by experts. This includes situations in which states are established conceptually based on expert knowledge (e.g., classifying ``team quality'' as low, medium, or high), as well as cases in which experts define discretization thresholds to map continuous data into discrete categories (e.g., establishing intervals to classify ``team velocity'' as very low, low, medium, high, and very high). The second approach, termed automatic discretization, refers to methods that discretize continuous data automatically, for example, using algorithms such as equal-frequency binning or fuzzy logic. Thus, the main distinction between these two approaches lies in the level of human intervention in defining discrete states. The third approach defines node values/states based on the literature. The approaches identified for defining the states of nodes in a BN are summarized in Table~\ref{tab:metodos_estados_nos} and described next.
+
+\begin{table}[t]
+\caption{Methods for identifying node values/states (Activity 1.2)}
+\label{tab:metodos_estados_nos}
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.38\linewidth}
+                              >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Method} & \textbf{Studies} \\
+\midrule
+Expert-derived categories/thresholds
+& S1--S8, S10, S12, S14, S18, S20, S21, S23--S25, S27, S29, S33, S35, S36, S38, S40, S43, S48, S59, S72, S74, S75, S77, S81, S88, S93--S96, S101, S107, S110, S118 \\
+Automatic discretization
+& S1, S18, S38, S58, S75, S85, S96, S103, S110, S111, S113, S114, S116, S118 \\
+Literature review
+& S73, S76, S108 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textit{Expert-derived categories/thresholds.} In S4, experts determined the possible states of each discrete factor. For effort-related factors (e.g., ``Total Effort,'' very low, low, medium, high, very high, extremely high), the intervals corresponding to each state were documented to avoid ambiguity. For instance, one of the participating companies defined very low effort as 4-10 person-hours. In S12, the node ``Report Complexity'' can assume one of three states: low, medium, or high. Project managers evaluated these states and agreed that this would be a simpler and more practical method. To define the values of the variable ``Working Hours,'' which represents the number of hours spent on a task, historical data were examined, indicating a range from 15 minutes to 95 hours. Rather than dividing these values directly into intervals, the node ``Working Hours Classification'' was added so that the number of intervals could be easily modified. In an earlier version of the model, the values of this node were classified into five intervals based on the authors' experience. In the revised model, empirical data were analyzed to assess the feasibility of increasing the number of intervals, which ultimately resulted in seven. S59 defined a binary variable for each software element with possible values ``Changed'' and ``Unchanged.'' These variables reflect experts' judgments regarding the likelihood of a given software element undergoing changes. In some cases, experts selected node values with the aim of simplifying the model, as in S21 and S74, which restricted variables to Boolean values.
+
+\textit{Automatic discretization.} In this approach, node states are defined through algorithms that automatically process data without direct expert intervention. In S18, the constructed model contains some ranked nodes with five states, while all other nodes are numerical and therefore require discretization into mutually exclusive intervals. To this end, the authors applied a dynamic discretization algorithm implemented in the AgenaRisk tool, which automatically defines intervals that more accurately reflect the underlying distributions. In S75, it was necessary to specify the binning intervals of root nodes representing the metrics used, since these metrics were computed and stored in a database using a continuous range. The authors used their own implementations of two unsupervised algorithms: equal-width binning and equal-frequency binning. The results were presented to the team leader as suggestions; however, he preferred to define his own intervals for each metric, based on his customary (implicit) rules and thresholds.
+
+Other studies used a fuzzy-logic-based approach. In the model presented in S58, entry nodes represent different metrics with continuous numerical values. To simplify probability specification, the authors discretized these values using a fuzzy partitioning process that replaces the original values with a set of functions that represent the membership degree of each value to the various fuzzy labels (e.g., ``small,'' ``average,'' and ``large''), allowing a value to partially belong to multiple groups. The authors used the Dunn partition coefficient to determine the optimal number of groups statistically. In S85, one of the quality criteria is represented by the node ``LinksNb,'' which measures the number of links and whose probability functions (for ``small,'' ``medium,'' and ``high'') are defined as membership functions. These functions are derived through a fuzzy clustering process applied to thousands of randomly selected Web pages.
+
+\textit{Literature review.} The authors of S73 used a five-point Likert scale (Very Low (VL), Low (L), Medium (M), High (H), Very High (VH)) based on prior studies in the literature. The authors of S76 also relied on results from other studies to define node states. For example, the success rate of software development projects can be classified into five categories: (i) significant changes, (ii) over time/budget, (iii) on time, on budget, on scope, (iv) canceled, and (v) postponed.
+
+\vspace*{0.5\baselineskip}
+
+\textbf{Methods for structure evaluation.} The methods identified for evaluating the structure of the BNs reported in the studies are presented in Table~\ref{tab:metodos_avaliacao_estrutura} and described next.
+
+\begin{table}[t]
+\caption{Methods used for structure evaluation (Activity 1.4)}
+\label{tab:metodos_avaliacao_estrutura}
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabularx}{0.80\linewidth}{>{\raggedright\arraybackslash}p{0.32\linewidth}
+                              >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Method} & \textbf{Studies} \\
+\midrule
+Interviews
+& S87 \\
+Focus groups
+& S3--S6 \\
+Survey with practitioners
+& S68, S72, S77, S101 \\
+Statistical analysis
+& S38, S68, S77, S113 \\
+Simulated association rules
+& S25 \\
+Expert review
+& S7, S20, S26, S35, S48, S81, S93, S107, S110, S113 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textit{Interviews.} In S87, the results of the literature review used to construct the model were validated through interviews with experienced practitioners. During these sessions, the interviewees evaluated the overall model and \added[id=A]{each proposed causal relationship separately}, providing their feedback.
+
+\textit{Focus groups.} In S3, the relationships suggested by the Hugin and PowerSoft tools during the automated structure construction were validated by domain experts through focus groups. S4 also used focus groups to evaluate the BN structure, examining, for example, whether the variables and their values have clear meaning, whether all relevant variables were included, whether variables are appropriately named, whether all states are suitable (exhaustive and mutually exclusive), and whether any states could be combined.
+
+\textit{Survey with practitioners.} Some studies also used surveys to evaluate the BN structure. For example, the authors of S68 administered a questionnaire, and \added[id=A]{the data were analyzed to examine associations relevant to the model's proposed relationships}. In S101, experts in software development and verification and validation (V\&V) activities were identified to contribute to the BN structure. They received a description of the preliminary model, \added[id=A]{which presented hypothesized causal relationships between software development life cycle attributes and residual defects}. Using a questionnaire, the experts evaluated the model, \added[id=A]{providing feedback on the proposed relationships and the relevance of the attributes}. Their responses were carefully considered, and the necessary changes to the model were made to incorporate their observations.
+
+\textit{Statistical analysis.} The results of statistical analyses can also be used to evaluate the structure of a BN. For example, S68 \added[id=A]{used bivariate correlation and ordinal regression analyses on survey data to examine associations relevant to the relationships proposed by domain experts}. S38 used market-basket analysis to test associations among the model's independent variables.
+
+\textit{Simulated association rules.} In S25, the evaluation was conducted using data mining techniques applied to synthetic data generated through simulation. These data were then analyzed using association rules to verify \added[id=A]{whether the simulated co-occurrences were consistent with the relationships assumed in the model}.
+
+\textit{Expert review.} \added[id=A]{Experts evaluate a BN structure by examining the plausibility of proposed relationships and the relevance of the included variables. Their feedback can reveal questionable assumptions and inform model refinement; agreement among experts does not by itself establish causal validity.} For example, in S7, experts evaluated each fragment of the BN to identify opportunities for improvement. The DAG was subsequently modified to reduce model complexity and improve performance, and variables were added and removed as needed. \added[id=A]{The authors of S20 submitted the BN structure to review by senior managers from the participating companies to assess its consistency with domain knowledge and observed practices.}
+

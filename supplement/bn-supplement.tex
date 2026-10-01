@@ -1,0 +1,42 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{graphicx,booktabs,tabularx,array,multirow,amsmath}
+\usepackage{caption,placeins,enumitem}
+\usepackage[most]{tcolorbox}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage[hidelinks]{hyperref}
+\newcommand{\added}[2][]{#2}
+\newcommand{\Description}[1]{}
+\graphicspath{{figures/}{samples/figures/}}
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{1em}
+\title{Supplementary Material\\[6pt]\large Building Bayesian Networks in Software Engineering:\\A Checklist and Catalog of Methods for Expert-Based and Hybrid Models}
+\author{Thiago Rique \and Emilia Mendes \and Mirko Perkusich \and Danyllo Albuquerque \and Kyller Gorg\^onio \and Angelo Perkusich}
+\date{}
+\begin{document}
+\maketitle
+This companion document provides mapping and agreement records, detailed method descriptions and application examples, and the activity-indexed catalog of retained software engineering studies. The checklist and catalog concern activities that directly specify, parameterize, or evaluate a Bayesian network (BN), assuming that a BN has been selected as the modeling approach. They are resources for consultation and documentation, not a prospectively evaluated construction methodology.
+
+The complete study-selection, mapping, extraction, and assessment workbooks are available in the \href{https://github.com/mprkc/bn-construction-se}{supplementary repository}. P identifiers refer to the cross-domain methodology review; S1--S118 refer to the assessed SE studies; PS1--PS66 refer to studies retained for the catalog. The workbooks retain their original identifiers and terminology.
+
+Abbreviations: SE, software engineering; DAG, directed acyclic graph; CPT, conditional probability table; EKEBN, Expert-Based Knowledge Engineering of Bayesian Networks.
+\tableofcontents
+\clearpage
+\input{supplement-mapping}
+\clearpage
+\input{supplement-methods-structure}
+\input{supplement-methods-parameters}
+\input{supplement-methods-validation}
+\clearpage
+\input{supplement-catalog}
+\FloatBarrier
+\bibliographystyle{plainnat}
+\bibliography{supplement-references}
+\end{document}

@@ -1,0 +1,203 @@
+\subsection{Parameter Estimation}
+
+The methods employed during the \textbf{parameter estimation} phase are described below, addressing the activities of CPT construction and evaluation. When reported in the studies, we also include the methods used to estimate the probability distributions of parent nodes.  
+
+\vspace*{0.5\baselineskip}
+
+\textbf{Methods for CPT construction.} Next, we describe the methods adopted for constructing CPTs along with examples of their application in the context of the analyzed studies. It is important to note that these methods are often combined when performing this activity. The methods used for CPT construction were classified into three categories according to the degree of automation in estimating the probabilities: manual, semi-automatic, and automatic. It is also worth noting that some methods may be applied with different levels of automation depending on the study.
+
+\textbf{Manual methods} are those in which the conditional probabilities are explicitly specified by the modeler, typically based on expert judgment, consensus among specialists, or information reported in the literature. In these approaches, the probabilities are directly determined or calculated by the modeler without the use of automated parameter learning procedures. Table~\ref{tab:metodos_manuais_cpt} presents the manual methods, which are described as follows.
+
+\begin{table}[t]
+\caption{Manual methods for CPT construction (Activity 2.1)}
+\label{tab:metodos_manuais_cpt}
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.44\linewidth}
+                              >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Method} & \textbf{Studies} \\
+\midrule
+Interviews
+& S8, S20, S87 \\
+Focus groups
+& S3--S6, S85 \\
+Literature review
+& S25, S29, S31, S58, S85, S101 \\
+Survey with practitioners
+& S10, S20, S26, S36, S48, S67, S68, S72, S76, S77, S81, S101, S103, S104, S107, S108 \\
+Analytic Hierarchy Process (AHP)
+& S37 \\
+Theoretical modeling
+& S43 \\
+Frequency quantification from historical/empirical data
+& S2, S3, S28, S35, S44, S68, S75, S77, S85, S93 \\
+Frequency estimation from simulated data
+& S80 \\
+Noisy-OR gates
+& S53, S59, S88 \\
+Direct functions
+& S2, S29, S43, S54, S59, S72, S88, S92, S94 \\
+Expert-derived functions
+& S85 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textit{Interviews.} In S8, the authors interviewed a domain expert to define the probability functions of the model's ranked nodes. For each dependent node in the graph, they defined a set of questions, and for each question, the expert provided the probability for each state of the child node. The analysis of the collected data was used to calibrate the probability tables, i.e., to define the parameters for the Ranked Nodes method. In S87, experts were interviewed to assign weights to the existing influencing factors. These weights were then used to define the model's probability tables.
+
+\textit{Focus groups.} Based on the literature and consultations with experts through focus groups, the authors of S85 established the following hierarchy of influence among the parent nodes of the ``NavMech'' node: ``NavElem'' as the most influential, followed by ``SMech,'' and ``SiteMap'' being the least impactful. The conditional probabilities were determined according to the impact of the absence or weakness of each parent node. For example, when all three parent nodes are present, the probability of ``NavMech'' being classified as good is 0.99. This probability decreases to 0.85, 0.70, and 0.45 in the absence of ``SiteMap,'' ``SMech,'' and ``NavElem,'' respectively. In cases of combined absence, the values drop to 0.55 when both ``SiteMap'' and ``SMech'' are missing, to 0.30 in the absence of ``NavElem'' and ``SiteMap,'' and to 0.15 without ``NavElem'' and ``SMech.'' The most critical scenario, in which all parent nodes are absent, results in a probability of 0.01.
+
+\textit{Literature review.} As discussed earlier in the context of structure building, \added[id=A]{this method can be used to identify key variables, reported dependencies, and causal hypotheses from existing research}. In addition, literature reviews can support the construction of the CPTs of BNs by extracting probabilistic data (e.g., frequencies, odds ratios) to quantify dependencies, validating assumptions with empirical evidence to reduce subjectivity, and filling gaps in expert judgment when data are scarce or conflicting. For example, the authors of S29 used the results of empirical research to construct the CPTs for essential relationships in the model, particularly between the effort invested in a project and the quantity and quality of the software developed.
+
+\textit{Survey with practitioners.} S67 used a questionnaire composed of four parts. One part addressed the occurrence and influence on software trustworthiness of the 52 risk factors identified during the planning, requirements, design, development, testing, and implementation processes. This part of the questionnaire helped collect data for parameter learning using the Expectation-Maximization (EM) algorithm. S68 conducted a survey with practitioners to obtain empirical data for CPT construction by estimating the observed frequencies in the sample. Another example is S10, which used the knowledge of an expert with extensive experience in project management to calibrate the probability functions. For each child node, the authors defined a questionnaire composed of a set of combinations of its parent nodes. These data served as the basis for applying the Ranked Nodes method used in CPT construction.
+
+\textit{Analytic Hierarchy Process.} In S37, the probability distributions of the root nodes were defined using the Analytic Hierarchy Process (AHP) to systematically incorporate inspectors' knowledge, thereby avoiding the simplification of uniform distributions that would disregard their experience. Through pairwise comparisons among the possible values of each variable (e.g., ``poor,'' ``fair,'' and ``good''), experts assigned relative weights, which were then transformed into consistent probabilities. In addition, AHP includes a mathematical consistency check and provides a systematic approach to eliciting expert knowledge.
+
+\textit{Theoretical modeling.} The authors of S43 constructed the CPTs through theoretical modeling, without relying on experts, empirical data, or the literature to ground the probabilistic values. The probabilities were specified based on parametric distributions (such as the Beta distribution), concentrated probability masses, and conservative assumptions defined by the authors themselves, with the goal of analytically exploring the behavior of multilegged arguments using BNs. This approach is therefore conceptual in nature, in which CPT values reflect theoretical premises and mathematical simplifications adopted for formal investigation purposes, rather than representing a real-world case.
+
+\textit{Frequency quantification from historical/empirical data.} In this approach, CPTs are derived directly from the frequencies observed in historical/empirical data. For example, S2 constructed CPTs by quantifying the frequency of events observed during software development by a Kanban team within an organization. The team collected backlog data daily after meetings, recording story points per task, canceled and reprioritized tasks (along with their positions in the backlog), the sum of completed story points, and newly added tasks (including their prioritization). These empirical data enabled the direct computation of conditional probabilities from real occurrences. S3 used the same approach to compute the probabilities of the model's parent nodes from the collected data. All probabilities reflect the frequency with which domain experts selected the states ``positive,'' ``neutral,'' or ``negative'' when choosing features to be implemented, considering the impact of these choices on the value factors represented by the model's nodes.
+
+\textit{Frequency estimation from simulated data.} Quantifying frequencies from simulation-generated data is a valid approach for constructing the CPTs of BNs, especially when empirical data are scarce or costly to obtain. The model developed in S80 enables runtime inference to assess the stability of a software system under operational uncertainty. To demonstrate its practical applicability and validate the proposed approach, the authors considered the case of cloud computing architectures. Pre-experiments conducted in a simulated cloud environment evaluated the dynamic allocation of virtual machines to physical servers, taking into account energy and cost models from the literature. Executing 300 intervals generated the data required for inference in the BN.
+
+\textit{Noisy-OR gates.} The use of noisy-OR gates is an efficient approach for constructing CPTs, particularly when multiple factors/parents can independently trigger an effect or when one aims to avoid the combinatorial explosion of traditional CPTs. For example, S53 describes a novel approach to software testing. The constructed models consist of parent nodes (where faults occur) and child nodes (where faults show up). Informally, if a fault occurs in a parent node (and in no other node), the connecting arc represents the probability that the parent's fault propagates to the child. Each parent node is assumed to transmit faults to its children independently. Each arc is labeled with a probability value indicating the likelihood that a fault in the parent node induces a fault in the child node (given that the parent has at least one fault). Under these assumptions, the authors of S53 used the noisy-OR gate model (a disjunctive interaction scheme) to define the CPTs of child nodes with respect to their parents.
+
+\textit{Direct functions.} Some studies also use direct functions, such as weighted sums and predefined formulas, to compute BN probabilities. These functions combine parent values deterministically, without relying on learning algorithms or data-driven adjustments. This approach reduces the need for detailed elicitation or statistical inference, as it is applied directly in CPT definition based on fixed mathematical rules. For example, in S54, the distribution of the child node ``Total number of faults'' is defined by a deterministic function obtained by summing all related fault categories, including ``Number of logical faults,'' ``Number of computational faults,'' ``Number of control and sequence faults,'' ``Number of initialization faults,'' ``Number of traceability faults,'' ``Number of inheritance and polymorphic faults,'' and ``Number of state model based faults.'' Thus, the total number of faults is a deterministic aggregation of these specific categories. Another example is S92, in which the probabilities of the node ``Coupling among Pages (CP)'' are computed as the ratio of the number of pages to which ``Fault proneness (FP)'' is linked to the total number of pages.
+
+\textit{Expert-derived functions.} S85 used expert-derived probabilistic functions to define the values of the BN's input nodes, particularly for binary navigability-related criteria (``URL,'' ``CPosLab,'' ``VLinkCol,'' ``Breadcrumbs,'' ``SMech,'' ``NavElem,'' ``LinkHome,'' and ``BackB''). For each binary criterion $c$, the probability of the ``yes'' state was set to 0.99 when the criterion was present and to 0.01 when it was absent. The probability of the ``no'' state was defined as the complement of ``yes'' ($P(c = Yes) =  0.99$ if $c$ exists; $0.01$ otherwise. $P(c = No) = 1 - P(c = Yes)$). This approach follows a simple deterministic rule, reflecting the confidence that the presence or absence of specific elements serves as an almost certain indicator of the node's state.
+
+\textbf{Semi-automatic methods} combine expert knowledge with computational support in order to reduce the effort required to specify the CPTs. In these approaches, experts provide structured inputs (e.g., rankings, scores, or scenario assessments), which are then transformed into conditional probabilities through predefined computational procedures. Table~\ref{tab:metodos_semi_cpt} summarizes the semi-automatic methods for CPT construction, which are described as follows.
+
+\begin{table}[t]
+\caption{Semi-automatic methods for CPT construction (Activity 2.1)}
+\label{tab:metodos_semi_cpt}
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabularx}{\linewidth}{>{\raggedright\arraybackslash}p{0.44\linewidth}
+                              >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Method} & \textbf{Studies} \\
+\midrule
+Ranked nodes method
+& S1, S7, S8, S10, S18, S27, S31, S33, S48, S73, S76, S81, S94 \\
+Partitioned expressions
+& S18, S27, S81 \\
+Weighted Sum Algorithm (WSA)
+& S3, S4, S75 \\
+Distribution fitting
+& S20, S29, S31, S37, S43, S53 \\
+Probability extrapolation
+& S28 \\
+Parametric learning
+& S21 \\
+Fuzzy logic
+& S58, S85, S95 \\
+Quantifying Judgment (QJ) method
+& S35, S36 \\
+Generalized Linear Model (GLM)
+& S54, S92 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textit{Ranked nodes method.} Widely adopted in SE studies (e.g., S1, S7, S8, S18, S27, S81), the ranked nodes method combines expert knowledge with computational procedures to generate the CPTs of a BN. On the one hand, it requires experts to provide qualitative judgments about the behavior of the dependent variable as a function of combinations of parent node states, typically expressed as rankings or ordinal scales (e.g., Likert scales). On the other hand, these judgments are used to automatically adjust the method's parameters (e.g., weighted function, weights, and variance), which define the probabilistic distribution of the CPTs in a continuous manner, thereby avoiding the need to manually fill in all possible state combinations. This process significantly reduces the cognitive effort required from experts, especially in situations involving many parent nodes or multiple states per variable, while still allowing fine-grained adjustments based on expert reasoning and empirical validation.
+
+A representative example is S7, which applied the method using the AgenaRisk tool. To define the type of function used, the weights assigned to parent nodes, and the variance, the adopted approach followed the proposal by Fenton et al.~\cite{fenton2007using}, which is based on expert knowledge elicitation through ``what-if'' analyses and the construction of truth tables. For each dependent node in the DAG, the authors formulated a set of questions defined in terms of combinations of the parent nodes' states, using a five-point Likert scale. Initially, they defined $2*i$ questions for each node, where $i$ is the number of parent nodes, using combinations with extreme values (e.g., ``Very low'' and ``Very high''). If this number of questions was insufficient to determine the three parameters, additional questions were added. The parameters were then adjusted through reasoning and trial and error until the inference results produced by the model were considered satisfactory.
+
+\textit{Partitioned expressions.} Using partitioned expressions instead of manually filling all rows of a probability table, the modeler defines partitions of the input space based on combinations of parent states and assigns an output probability or distribution to each partition. S27 used partitioned expressions to define the CPTs of ``probability'' nodes in the subnetworks related to development activities, which are then used in the defect insertion and discovery subnetwork. For each state of the parent node, representing the overall effectiveness of a specific activity, such as the testing process, a truncated normal distribution was used, with the mean and variance adjusted according to the level of effectiveness. For example, when the effectiveness of the testing process is at the lowest level, the distribution has a mean of 0.01, indicating that only 1\% of defects would be detected; at the highest level, the mean is 0.9, indicating 90\% detection. The mean values of these distributions, depending on the value of the parent node, are detailed in a table in the study, while the variance was fixed at 0.001 for all ``probability'' nodes (except for one case with 0.005). The truncation bounds were defined between 0 and 1, ensuring that values remained within the valid probability interval.
+
+\textit{Weighted Sum Algorithm (WSA).} In his method, Das~\cite{das2004generating} introduces the notion of compatible parental configurations as a strategy to facilitate the elicitation of scenarios that are cognitively more accessible to experts. The expert is asked to provide probabilities only for combinations of the parent nodes' states that they consider meaningful (i.e., compatible) rather than for all possible combinations. Based on these configurations, a weighted sum calculation is applied to automatically generate the remaining probabilities of the child node's CPT.
+
+In the example presented in S3, the CPT of the ``cost efficiency'' node is constructed based on the expert's experience, who is asked to provide probabilities only for the combinations of the parent nodes' states deemed most significant (or compatible). This node has five parents: ``delivery cost,'' ``maintenance cost,'' ``operational cost,'' ``support cost,'' and ``development effort.'' The expert examines each of these nodes, selects the states (positive, neutral, or negative) that are most representative, and assigns the corresponding probabilities to the states of the ``cost efficiency'' node. For example, a compatible parental configuration might be: delivery cost = positive, maintenance cost = positive, operational cost = neutral, support cost = neutral, and development effort = positive. After defining these probabilities, the expert also assigns weights to each parent node, reflecting its relative importance to the child node, subject to the constraint that the weights sum to 1. Using this information, the tool applies the WSA to automatically generate the complete CPT of the ``cost efficiency'' node. Other studies, such as S4 and S75, also used this method.
+
+\textit{Distribution fitting.} This method consists of using parametric probability distributions to model the probabilities of a node, based on empirical data, expert knowledge, or a combination of both. The process may involve applying statistical goodness-of-fit tests, expert-informed selection of an appropriate distribution, or a combination of these approaches. In S20, the authors used the Lilliefors significance test --- a variation of the Kolmogorov-Smirnov test --- to assess whether a group of model variables follows a specific distribution. This test is suitable for small samples (fewer than 50 observations) and allows testing adherence to several distributions, such as normal, lognormal, exponential, and Weibull. The goal was to identify the most appropriate distribution to represent each variable in the model.
+
+The authors of S31 initially defined normal distributions for the variables ``effectiveness limit,'' ``process improvement,'' and ``process effectiveness,'' with a standard deviation of 0.3 and means of 0.8, 0.2, and 0.3, respectively. These values were based on a controlled case study reported in the literature and were subsequently adjusted. For the variable ``estimation bias,'' a lognormal distribution was adopted, justified by the fact that bias cannot take negative values and has no upper bound. This choice was grounded both conceptually and in empirical evidence from the literature.
+
+\textit{Probability extrapolation.} In S28, the authors used a probability extrapolation approach to construct CPTs for nodes with multiple parents, as directly eliciting probabilities for all combinations of parent states proved infeasible. Instead of eliciting every probability, they asked experts to specify probabilities for a representative sample of combinations, including both extreme cases and typical scenarios. For each sampled configuration, the experts described the approximate shape of the probability distribution for the node (e.g., specification quality). Using these inputs, the authors generated probability distributions for the sampled cases and extrapolated distributions for the remaining combinations. Finally, they derived a function from the expert-defined distributions to compute the mean of the specification quality distribution as a function of the parent variables. This approach reduces the elicitation burden by allowing experts to specify only a limited set of representative cases, while the remaining probabilities are inferred through extrapolation.
+
+\textit{Parametric learning.} In S21, which uses a BN-based approach to support the recommendation of design patterns to novice developers, the authors initially defined the CPTs with uniform distributions because they lacked detailed information about combinations of evidence. They then progressively updated the model based on feedback from experienced developers through a parametric learning mechanism implemented in the ``PatternAdvisor'' agent. This process refined the probabilities associated with the recommended design patterns, making the model more sensitive to real-world application contexts.
+
+\textit{Fuzzy logic.} The authors of S58 defined the state values of the input nodes through fuzzy logic-based discretization. They transformed quantitative coupling metrics into linguistic categories, using the Dunn partition coefficient to determine the optimal number of groups. They then used the resulting fuzzy membership degrees directly to populate the CPTs of these nodes.
+
+In S95, the authors constructed CPTs by combining expert knowledge with computational techniques. They elicited mutual information between the parent nodes and the child node, with respect to the target node, from domain experts to build the rule base of the inference mechanism. Given a node with $n$ parents and an ordinal scale with $k$ levels to linguistically represent the states of both the parent nodes and the child node, the system generates $k^{n}$ fuzzy if-then rules and $k^{n+1}$ conditional probabilities, where $k, n \in N$. The authors then applied an interval type-2 fuzzy inference system to compute the conditional probabilities automatically, using Gaussian membership functions and the predefined rules.
+
+\textit{Quantifying Judgment (QJ) method.} The authors of S35 used the QJ method to construct the CPTs of child nodes. This method is based on the idea that the probability that a child node is in a given state depends on the parent nodes that share that state. To apply QJ, two types of information are required: (1) the relative importance ranking of the parent nodes and their associated weights, represented by relative contribution values (RCV), from which the method computes absolute contribution values (ACV); and (2) the amount of new information that one parent provides given the presence of another, expressed as a relative added value (RAV) and converted into an absolute added value (AAV). The method then uses the AAV and ACV values to automatically generate the CPT of each node. To facilitate CPT construction, the authors limited the number of parents to four and elicited the RCV and RAV values from an independent verification and validation (IV\&V) analyst.
+
+\textit{Generalized Linear Model (GLM).} This approach fits a link function between the dependent variable and a linear combination of the independent variables (the parent nodes), enabling the estimation of conditional probabilities within a well-founded statistical framework. The model parameters can be estimated from data or elicited from experts, providing flexibility in the modelling process.
+
+In S54, the authors used a GLM to establish the relationship between parent nodes, representing product metrics, and child nodes, representing specific fault categories. A multiple linear regression analysis, applied to different fault categories and their associated project metrics, estimates the probability of a given fault category. For example, a linear regression equation can model the probability distribution of the ``number of inheritance faults,'' where ``number of inheritance faults'' is the dependent variable and metrics such as NOC, DIT, and MIF (see S54) are independent variables. The authors estimated the regression coefficients using maximum likelihood estimation (MLE). In S92, the authors determined the CPTs for the importance of a module, given the system's dependence on the module, using a binary logistic regression model, whose parameters were estimated with an online tool.
+
+\textbf{Automatic methods} estimate the conditional probabilities directly from data using statistical or machine learning algorithms. In these approaches, the parameters of the CPTs are learned automatically from empirical observations, without requiring experts to explicitly specify the probabilities. Table~\ref{tab:metodos_auto_cpt} summarizes the methods identified for parameter learning, which are described next.
+
+\begin{table}[t]
+\caption{Automatic methods for CPT construction (Activity 2.1)}
+\label{tab:metodos_auto_cpt}
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabularx}{0.70\linewidth}{>{\raggedright\arraybackslash}p{0.45\linewidth}
+                              >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Method} & \textbf{Studies} \\
+\midrule
+Expectation-Maximization (EM) algorithm
+& S59, S67, S104, S113 \\
+Maximum Likelihood Estimation (MLE) algorithm
+& S54 \\
+Learning from data using an automated tool
+& S12, S18, S23, S24, S26, S40, S77, S96, S116, S118 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textit{Expectation-Maximization (EM) algorithm.} This algorithm is commonly used to estimate the parameters of BNs when data are incomplete or contain latent variables. It iteratively alternates between an expectation step (E-step), which computes the expected values of missing variables using the current parameter estimates, and a maximization step (M-step), which updates the CPTs by maximizing the expected likelihood of the observed data. This process repeats until the parameter estimates converge. Examples of studies that apply this method for parameter estimation include S59, S67, S104, and S113.
+
+\textit{Maximum Likelihood Estimation (MLE) algorithm.} In S54, the authors adopted a GLM --- specifically, a multiple linear regression --- to represent the relationships among the BN's continuous variables. They estimated the model coefficients automatically using the MLE algorithm.
+
+\textit{Learning from data using an automated tool.} Some studies constructed the CPTs based on historical data using an automated tool without detailing the specific method used. For example, the authors of S12 used data from agile projects of a small software company to estimate probabilities with the Weka tool.
+
+\vspace*{0.5\baselineskip}
+\textbf{Methods for CPT evaluation.} Most studies that reported information on CPT evaluation relied on methods involving expert participation. Table~\ref{tab:metodos_cpt_avaliacao} lists the identified methods.
+
+\begin{table}[t]
+\caption{Methods used for CPT evaluation (Activity 2.2)}
+\label{tab:metodos_cpt_avaliacao}
+\centering
+\small
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{tabularx}{0.70\linewidth}{>{\raggedright\arraybackslash}p{0.30\linewidth}
+                              >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Method} & \textbf{Studies} \\
+\midrule
+Expert review
+& S2, S18, S28, S29, S40, S53, S74, S75, S81, S113 \\
+Focus groups
+& S3, S5, S6 \\
+Brier score
+& S7 \\
+Simulated relevance analysis
+& S25 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\textit{Expert review.} Studies such as S18 and S75 evaluated the consistency and plausibility of the CPTs through critical analysis by one or more experts. These experts reviewed the assigned probability values to verify whether they aligned with domain knowledge and the model's logic.
+
+\textit{Focus groups.} Researchers can use focus groups to evaluate the CPTs of a BN through collaborative discussion with a group of experts. The participants jointly examine the probability values assigned to parent-child state combinations, discuss their plausibility and coherence with domain knowledge, and may suggest adjustments. This approach promotes collective validation, identifies inconsistencies, and strengthens consensus on the defined parameters, as described in S3, S5, and S6.
+
+\textit{Brier score.} The authors of S7 constructed the CPTs using the ranked nodes method with the support of the AgenaRisk tool. They defined the required parameters --- function type, parent node weights, and variance --- based on expert knowledge elicited through questions formulated from combinations of extreme state values of parent nodes. To evaluate CPT accuracy, the authors applied the Brier score, which measures the squared error between the predicted probability for each state and the expert's judgment. They repeated this process until obtaining parameter combinations that produced a mean Brier score of 0.1 or lower, which was adopted as the criterion for adequate calibration.
+
+\textit{Simulated relevance analysis.} In S25, the authors simulated all possible permutations of the input variables, generating a large volume of predictive data on reliability and performance time. They then analyzed these data using a relevance analysis approach to rank the input variables according to their influence on the output nodes (e.g., reliability).
+

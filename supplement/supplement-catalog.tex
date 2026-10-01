@@ -1,0 +1,736 @@
+\section{Activity-Indexed Catalog and Reference Studies}
+\label{app:protocolo}
+
+The catalog includes the 66 SE studies retained using the aggregate-score threshold of 1.5. Identifiers PS1--PS66 refer to those retained studies; identifiers S1--S118 in Supplement S2 refer to the full assessed set. The accompanying Checklist Application workbook provides their correspondence. Scores describe the detail reported for construction activities, not independently established model quality.
+
+\subsection{Organization and Scoring}
+
+The catalog is organized by the checklist phases and activities (Figure~\ref{fig:protocolo_overview}). Tables~\ref{tab:checklist_operational} and~\ref{tab:scoring_scheme} reproduce the assessment questions and rubric. Table~\ref{tab:bons_exemplos} lists selected reference studies with maximum phase-level scores.
+
+\begin{figure}[htbp]	
+\begin{center}
+		\includegraphics[width=\linewidth,angle=90]{ProtocolStructure.png}
+	\end{center}
+	\caption{\added[id=A]{Overview of the catalog's organization by construction phase and activity.}}
+	\label{fig:protocolo_overview}
+\end{figure}
+\begin{table*}[t]
+\caption{\added[id=A]{Checklist for assessing reported BN construction procedures}}
+\label{tab:checklist_operational}
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{6pt}
+
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{0.9cm}
+                              >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{ID} & \textbf{Assessment criterion} \\
+\midrule
+
+\multicolumn{2}{l}{\textbf{Structure building}} \\
+Q1   & Is the construction of the BN structure appropriately described? \\
+Q1.1 & Did the researchers detail how the model variables/factors were identified? \\ 
+Q1.2 & Did the researchers detail how the node values/states were defined? \\
+Q1.3 & Did the researchers detail how the relationships among the model variables/factors were identified? \\
+Q1.4 & Did the researchers detail how the BN structure was evaluated? \\ 
+
+\addlinespace[6pt]
+\multicolumn{2}{l}{\textbf{Parameter estimation}} \\
+Q2   & Is the estimation of the BN parameters appropriately described? \\
+Q2.1 & Did the researchers detail how the CPTs were constructed? \\
+Q2.2 & Did the researchers detail how the CPTs were evaluated? \\
+
+\addlinespace[6pt]
+\multicolumn{2}{l}{\textbf{Model validation}} \\
+Q3   & Is the BN validation appropriately described? \\
+Q3.1 & Did the researchers detail how the model was validated using an expert-driven and/or data-driven approach? \\
+
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\begin{table*}[t]
+\caption{\added[id=A]{Scoring levels for the assessment of reported construction procedures}}
+\label{tab:scoring_scheme}
+\centering
+\small
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{8pt}
+
+\begin{tabularx}{\textwidth}{>{\centering\arraybackslash}p{1.2cm} >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{Score} & \textbf{Interpretation} \\
+\midrule
+0   & No relevant information is provided, or the description is too vague to enable replication of the BN construction process. \\
+0.5 & Partial information is provided, lacking sufficient detail for straightforward replication. \\
+1   & The activity is clearly and comprehensively described, with sufficient detail to allow replication of the approach with minimal ambiguity. \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\added[id=A]{Given that each construction phase (structure building, parameter estimation, and model validation) contains different numbers of checklist items, we normalized their scores so that each phase contributes equally, with a maximum of one point, to the study’s total score ($S_{total}$) as follows:}
+
+\vspace*{0.5\baselineskip}
+
+$S_{total} = 0.25 \times Q1 + 0.5 \times Q2 + Q3$
+
+where
+
+$Q1 = Q1.1 + Q1.2 + Q1.3 + Q1.4$
+
+$Q2 = Q2.1 + Q2.2$
+
+$Q3 = Q3.1$
+
+\vspace*{0.5\baselineskip}
+
+\added[id=A]{To define the set of representative studies for the method catalog, we established a minimum overall score of 1.5. This threshold corresponds to the overall score obtained when all checklist items receive the intermediate score of 0.5. The selection criterion was based on the overall score rather than on a minimum score for each checklist item. Accordingly, studies with \(S_{total} \geq 1.5\) were included in this set. Studies meeting this threshold formed the evidence base for extracting methods. Inclusion identifies the studies retained under this assessment rule, not methods demonstrated to be more reliable or models demonstrated to be of higher quality.}
+
+\begin{table*}[t]
+\caption{\added[id=A]{Selected reference studies with maximum phase-level assessment scores}}
+\label{tab:bons_exemplos}
+\centering
+\small
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{8pt}
+
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{45pt}
+                                >{\raggedright\arraybackslash}X}
+\toprule
+\textbf{ID} & \textbf{Article title} \\
+\midrule
+
+\multicolumn{2}{l}{\textbf{Structure building}} \\[2pt]
+PS3 & Towards improving decision making and estimating the value of decisions in value-based software engineering: the VALUE framework \\
+PS4 & Using knowledge elicitation to improve Web effort estimation: Lessons from six industrial case studies \\
+PS7 & Assisting the continuous improvement of Scrum projects using metrics and Bayesian networks \\
+
+\addlinespace[6pt]
+\multicolumn{2}{l}{\textbf{Parameter estimation}} \\[2pt]
+PS3 & Towards improving decision making and estimating the value of decisions in value-based software engineering: the VALUE framework \\
+PS7 & Assisting the continuous improvement of Scrum projects using metrics and Bayesian networks \\
+PS42 & A method to estimate software strategic indicators in software development: an industrial application \\
+
+\addlinespace[6pt]
+\multicolumn{2}{l}{\textbf{Model validation}} \\[2pt]
+PS3 & Towards improving decision making and estimating the value of decisions in value-based software engineering: the VALUE framework \\
+PS4 & Using knowledge elicitation to improve Web effort estimation: Lessons from six industrial case studies \\
+PS7 & Assisting the continuous improvement of Scrum projects using metrics and Bayesian networks \\
+PS10 & Advanced Bayesian network for task effort estimation in agile software development \\
+PS19 & On the effectiveness of early life cycle defect prediction with Bayesian Nets \\
+
+\bottomrule
+\end{tabularx}
+\end{table*}
+\FloatBarrier
+
+\FloatBarrier
+
+\subsection{Structure Building}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{AppendixStructureBuilding.png}
+  \caption{Phase 1: Structure building.}
+  \Description{\added[id=A]{Diagram of the catalog's structure-building phase and its associated activities.}}
+  \label{fig:app-structure-building}
+\end{figure}
+
+\begin{table}[tbp]
+\caption{Studies and scores for Phase 1 (Structure building)}
+\label{tab:app_phase1_scores}
+
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{p{45pt}p{45pt}p{\dimexpr\linewidth-90pt-6\tabcolsep\relax}}
+\toprule
+\textbf{Activity} & \textbf{Score} & \textbf{Studies} \\
+\midrule
+
+1.1 & 0.5 & PS15, PS33, PS54, PS65, PS66 \\
+    & 1.0 & PS1--PS14, PS16--PS19, PS21--PS25, PS27--PS32, PS34--PS53, PS55--PS64 \\
+
+\midrule
+
+1.2 & 0.5 & PS11, PS13, PS17, PS19, PS21, PS24, PS29, PS39, PS47, PS48, PS52, PS56, PS61, PS62, PS66 \\
+    & 1.0 & PS2--PS10, PS12, PS15, PS16, PS25, PS27, PS31, PS35, PS42, PS50, PS53, PS55, PS59, PS60, PS63--PS65 \\
+
+\midrule
+
+1.3 & 0.5 & PS2, PS11, PS15, PS33, PS54, PS62, PS65, PS66 \\
+    & 1.0 & PS1, PS3--PS10, PS12--PS14, PS16--PS19, PS21--PS25, PS27--PS32, PS34--PS53, PS55--PS61, PS63, PS64 \\
+
+\midrule
+
+1.4 & 0.5 & PS24, PS52, PS59, PS61, PS66 \\
+    & 1.0 & PS3--PS7, PS13, PS17, PS18, PS27, PS31, PS38, PS39, PS44, PS47, PS49, PS56, PS63 \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+\vspace{0.5cm}
+
+\begin{table}[t]
+\caption{Methods used for structure building (variables and relationships)}
+\label{tab:app_methods_var_rel}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.26\linewidth}
+                            >{\raggedright\arraybackslash}X
+                            >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Method} & \textbf{1.1: Variables} & \textbf{1.3: Relationships} \\
+\midrule
+Interviews
+& PS1, PS3, PS5, PS16, PS18, PS37, PS41, PS47, PS59, PS62
+& PS1, PS8, PS16, PS18, PS41, PS47, PS59 \\
+Focus groups
+& PS3--PS6, PS19, PS42, PS47, PS64
+& PS3--PS6, PS19, PS42, PS47 \\
+Survey with practitioners
+& PS57, PS58, PS64
+& PS37, PS57--PS60, PS62 \\
+Literature review
+& PS2, PS4, PS6--PS9, PS11, PS13, PS14, PS17, PS19, PS21, PS23--PS27, PS30, PS32, PS34, PS35, PS37--PS40, PS42--PS46, PS48, PS49, PS51--PS53, PS55, PS56, PS58--PS60, PS62, PS63
+& PS2, PS4, PS6, PS7, PS13, PS14, PS17, PS19, PS21, PS23--PS28, PS30, PS32, PS35, PS38--PS40, PS42--PS46, PS48, PS49, PS51--PS53, PS55, PS56, PS58 \\
+Selection of variables from a dataset
+& PS4, PS6, PS27, PS28
+& --- \\
+Delphi method
+& PS7
+& PS7 \\
+Grounded theory
+& PS3, PS5, PS41, PS57, PS58
+& PS41, PS57, PS58 \\
+Statistical analysis
+& ---
+& PS13, PS34 \\
+Software analysis
+& PS36
+& PS36 \\
+Abstraction sheets
+& PS1
+& PS1 \\
+Idioms
+& PS7, PS13, PS31, PS47, PS48, PS52
+& PS7, PS13, PS31, PS47, PS48, PS52 \\
+Divorcing
+& ---
+& PS3--PS6, PS48, PS49 \\
+d-separation
+& ---
+& PS4, PS10, PS53 \\
+Life Cycle Model (SDLC)
+& PS11, PS15, PS19--PS22, PS53, PS54, PS56
+& PS11, PS15, PS19--PS22, PS53, PS54, PS56 \\
+Risk-centric modeling
+& PS37, PS41, PS45, PS52, PS58--PS60
+& PS37, PS41, PS45, PS52, PS58--PS60 \\
+GQM paradigm
+& PS1, PS9, PS10, PS12, PS47, PS48
+& PS1, PS9, PS10, PS12, PS47, PS48 \\
+Top-down approach
+& PS7, PS8, PS40
+& PS7, PS8, PS40 \\
+Quality model
+& PS33, PS42, PS50
+& PS33, PS42, PS50 \\
+Value model
+& PS3
+& PS3 \\
+Argumentation model
+& PS29
+& PS29 \\
+K2 algorithm
+& PS61
+& PS61, PS64 \\
+NPC algorithm
+& PS63
+& PS63 \\
+Cheng's algorithm
+& ---
+& PS59, PS60 \\
+V-structure discovery algorithm
+& ---
+& PS60 \\
+Learning from data using an automated tool
+& PS65, PS66
+& PS3, PS62, PS65, PS66 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[t]
+\caption{Methods used to define node states (Activity 1.2)}
+\label{tab:app_methods_node_states}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.38\linewidth}
+                            >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Method} & \textbf{Studies (Activity 1.2)} \\
+\midrule
+Expert-derived categories/thresholds
+& PS1--PS17, PS19, PS21, PS23--PS25, PS27--PS29, PS31, PS36, PS39, PS41, PS42, PS44, PS47, PS50, PS52--PS56, PS59, PS61, PS66 \\
+Automatic discretization
+& PS1, PS12, PS27, PS35, PS42, PS48, PS55, PS57, PS61--PS66 \\
+Literature review
+& PS40, PS43, PS60 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[t]
+\caption{Methods used to evaluate the structure (Activity 1.4)}
+\label{tab:app_methods_structure_evaluation}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.38\linewidth}
+                            >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Method} & \textbf{Studies (Activity 1.4)} \\
+\midrule
+Interviews & PS49 \\
+Focus groups & PS3--PS6 \\
+Survey with practitioners & PS38, PS39, PS44, PS56 \\
+Statistical analysis & PS27, PS38, PS44, PS63 \\
+Simulated association rules & PS17 \\
+Expert review & PS7, PS13, PS18, PS24, PS31, PS47, PS52, PS59, PS61, PS63 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{Reference Studies for Structure Building}
+
+The following studies were identified as reference studies for the structure building phase, as they achieved a score of 1.0 in all activities (Activities 1.1--1.4):
+
+\begin{itemize}
+    \item Mendes, E., Rodriguez, P., Freitas, V., Baker, S., \& Atoui, M. A. (2018). Towards improving decision making and estimating the value of decisions in value-based software engineering: The VALUE framework. \textit{Software Quality Journal}, 26(2), 607--656. [PS3]
+    
+    \item Mendes, E. (2012). Using knowledge elicitation to improve web effort estimation: Lessons from six industrial case studies. In \textit{Proceedings of the 34th International Conference on Software Engineering (ICSE)} (pp. 1112--1121). IEEE. [PS4]
+    
+    \item Mendes, E., Vaz, V. T., \& Muradas, F. (2015). An expert-based requirements effort estimation model using Bayesian networks. In \textit{International Conference on Software Quality} (pp. 79--93). Springer. [PS5]
+    
+    \item Mendes, E. (2013). Using expert-based Bayesian networks as decision support systems to improve project management of healthcare software projects. In \textit{International Conference on Software Engineering and Applications} (Vol. 2, pp. 389--399). SCITEPRESS. [PS6]
+    
+    \item Perkusich, M., Gorgônio, K. C., Almeida, H., \& Perkusich, A. (2017). Assisting the continuous improvement of Scrum projects using metrics and Bayesian networks. \textit{Journal of Software: Evolution and Process}, 29(6), e1835. [PS7]
+    
+    \item Pendharkar, P. C., Subramanian, G. H., \& Rodger, J. A. (2005). A probabilistic model for predicting software development effort. \textit{IEEE Transactions on Software Engineering}, 31(7), 615--624. [PS27]
+    
+    \item Perkusich, M., Medeiros, A., e Silva, L. C., Gorgônio, K. C., de Almeida, H. O., \& Perkusich, A. (2015). A Bayesian network approach to assist on the interpretation of software metrics. In \textit{Proceedings of the 30th Annual ACM Symposium on Applied Computing} (pp. 1498--1503). [PS31]
+    
+    \item Mendes, E. (2007). The use of a Bayesian network for web effort estimation. In \textit{International Conference on Web Engineering} (pp. 90--104). Springer. [PS63]
+\end{itemize}
+
+\added[id=A]{These studies provide reference examples of reported variable identification, state definition, relationship elicitation, and structure evaluation. Their selection reflects the phase-level assessment scores rather than an independent comparison of the quality of their BN models.}
+
+\subsection{Parameter Estimation}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth,height=0.42\textheight,keepaspectratio]{AppendixParameterEstimation.png}
+  \caption{Phase 2: Parameter estimation.}
+  \Description{\added[id=A]{Diagram of the catalog's parameter-estimation phase and its associated activities.}}
+  \label{fig:app-estimativa-parametros}
+\end{figure}
+
+\begin{table}[t]
+\caption{Studies and scores for Phase 2 (Parameter estimation)}
+\label{tab:app_phase2_scores}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{p{45pt}p{45pt}p{\dimexpr\linewidth-90pt-6\tabcolsep\relax}}
+\toprule
+\textbf{Activity} & \textbf{Score} & \textbf{Studies} \\
+\midrule
+
+2.1 & 0.5 & PS9, PS12, PS17, PS21, PS35, PS36, PS39, PS40, PS46, PS50, PS52, PS56, PS63 \\
+    & 1.0 & PS1--PS3, PS7, PS8, PS13, PS14, PS19, PS20, PS22--PS26, PS29, PS31, PS33, PS34, PS37, PS38, PS42, PS44, PS47, PS48, PS53, PS54, PS58 \\
+
+\midrule
+
+2.2 & 0.5 & PS2, PS12, PS20, PS21, PS33, PS47, PS63 \\
+    & 1.0 & PS3, PS7, PS17, PS42 \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\caption{Methods used for CPT construction (Activity 2.1)}
+\label{tab:app_methods_cpt_construction}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.40\linewidth}
+                            >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Method} & \textbf{Studies (Activity 2.1)} \\
+\midrule
+Interviews & PS8, PS13, PS49 \\
+Focus groups & PS3--PS6, PS48 \\
+Literature review & PS17, PS21, PS22, PS35, PS48, PS56 \\
+Survey with practitioners & PS9, PS13, PS18, PS25, PS31, PS37--PS39, PS43, PS44, PS47, PS56--PS60 \\
+Analytic Hierarchy Process (AHP) & PS26 \\
+Theoretical modeling & PS29 \\
+Frequency quantification from historical/empirical data & PS2, PS3, PS20, PS24, PS30, PS38, PS42, PS44, PS48, PS52 \\
+Frequency estimation from simulated data & PS46 \\
+Noisy-OR gates & PS33, PS36, PS50 \\
+Direct functions & PS2, PS21, PS29, PS34, PS36, PS39, PS50, PS51, PS53 \\
+Expert-derived functions & PS48 \\
+Ranked nodes method & PS1, PS7--PS9, PS12, PS19, PS22, PS23, PS31, PS40, PS43, PS47, PS53 \\
+Partitioned expressions & PS12, PS19, PS47 \\
+Weighted Sum Algorithm (WSA) & PS3, PS4, PS42 \\
+Distribution fitting & PS13, PS21, PS22, PS26, PS29, PS33 \\
+Probability extrapolation & PS20 \\
+Parametric learning & PS14 \\
+Fuzzy logic & PS35, PS48, PS54 \\
+Quantifying Judgment (QJ) method & PS24, PS25 \\
+Generalized Linear Model (GLM) & PS34, PS51 \\
+Expectation-Maximization (EM) algorithm & PS36, PS37, PS58, PS63 \\
+Maximum Likelihood Estimation (MLE) & PS34 \\
+Learning from data using an automated tool & PS10, PS12, PS15, PS16, PS18, PS28, PS44, PS55, PS65, PS66 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\begin{table}[t]
+\caption{Methods used for CPT evaluation (Activity 2.2)}
+\label{tab:app_methods_cpt_evaluation}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.42\linewidth}
+                            >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Method} & \textbf{Studies (Activity 2.2)} \\
+\midrule
+Expert review & PS2, PS12, PS20, PS21, PS28, PS33, PS41, PS42, PS47, PS63 \\
+Focus groups & PS3, PS5, PS6 \\
+Brier score & PS7 \\
+Simulated relevance analysis & PS17 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{Reference Studies for Parameter Estimation}
+
+The following studies were identified as reference studies for the parameter estimation phase, as they achieved a score of 1.0 in all activities (Activities 2.1--2.2):
+
+\begin{itemize}
+    \item Mendes, E., Rodriguez, P., Freitas, V., Baker, S., \& Atoui, M. A. (2018). Towards improving decision making and estimating the value of decisions in value-based software engineering: The VALUE framework. \textit{Software Quality Journal}, 26(2), 607--656. [PS3]
+    
+    \item Perkusich, M., Gorgônio, K. C., Almeida, H., \& Perkusich, A. (2017). Assisting the continuous improvement of Scrum projects using metrics and Bayesian networks. \textit{Journal of Software: Evolution and Process}, 29(6), e1835. [PS7]
+    
+    \item Manzano, M., Ayala, C., Gómez, C., Abherve, A., Franch, X., \& Mendes, E. (2021). A method to estimate software strategic indicators in software development: An industrial application. \textit{Information and Software Technology}, 129, 106433. [PS42]
+\end{itemize}
+
+\added[id=A]{These studies provide reference examples of reported CPT construction and evaluation procedures. Their selection reflects the phase-level assessment scores rather than demonstrated superiority of their methods or models.}
+
+\subsection{Model Validation}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth,height=0.42\textheight,keepaspectratio]{AppendixModelValidation.png}
+  \caption{Phase 3: Model validation.}
+  \Description{\added[id=A]{Diagram of the catalog's model-validation phase and its associated activities.}}
+  \label{fig:app-validacao-modelo}
+\end{figure}
+
+\begin{table}[t]
+\caption{Studies and scores for Phase 3 (Model validation - Activities 3.1 and 3.2)}
+\label{tab:app_phase3_scores}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{p{55pt}p{55pt}p{\dimexpr\linewidth-110pt-6\tabcolsep\relax}}
+\toprule
+\textbf{Activity} & \textbf{Score} & \textbf{Studies} \\
+\midrule
+
+3.1/3.2 & 0.5 & PS2, PS21, PS23, PS24, PS29, PS33, PS35, PS37, PS50, PS52, PS56 \\
+        & 1.0 & PS1, PS3--PS16, PS18--PS20, PS22, PS25--PS28, PS30--PS32, PS34, PS36, PS38--PS49, PS51, PS53--PS55, PS57--PS66 \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[t]
+\caption{Methods used for model validation (Activities 3.1 and 3.2)}
+\label{tab:app_methods_model_validation}
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.42\linewidth}
+                            >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{Method} & \textbf{Studies (Activities 3.1/3.2)} \\
+\midrule
+Model walkthrough
+& PS1, PS3, PS4, PS6, PS7, PS9, PS12, PS14, PS20, PS32, PS40--PS43, PS47, PS49, PS52 \\
+
+Sensitivity analysis
+& PS2, PS12, PS19, PS26, PS44 \\
+
+Focus groups
+& PS41 \\
+
+Case study
+& PS8, PS25, PS31, PS46, PS53, PS57, PS58 \\
+
+Proof of concept
+& PS2, PS19, PS21, PS23, PS24, PS29, PS33, PS35, PS37, PS50, PS56 \\
+
+Predictive accuracy
+& PS3--PS6, PS8, PS18--PS20, PS28, PS31, PS36, PS42, PS45, PS63, PS64 \\
+
+Cross-validation
+& PS10, PS15, PS16, PS30, PS38, PS57, PS59, PS60, PS65 \\
+
+Statistical measures
+& PS10, PS11, PS13--PS16, PS19, PS22, PS32, PS34, PS36, PS39, PS44, PS48, PS51, PS54, PS55, PS57, PS59, PS61--PS63, PS66 \\
+
+Comparison with existing models
+& PS27, PS34, PS44, PS51, PS54, PS59, PS60 \\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{Reference Studies for Model Validation}
+
+The following studies were identified as reference studies for the model validation phase, as they achieved a score of 1.0 in at least one of the validation activities (Activity 3.1 or 3.2):
+
+\small
+\begin{itemize}
+
+\item Saraiva, R. M., Perkusich, M. B., Almeida, H. O., \& Perkusich, A. (2017).
+A process to calculate the uncertainty of software metrics-based models using Bayesian networks.
+In \textit{SEKE} (pp. 467--472). [PS1]
+
+\item Mendes, E., Rodriguez, P., Freitas, V., Baker, S., \& Atoui, M. A. (2018).
+Towards improving decision making and estimating the value of decisions in value-based software engineering: The VALUE framework.
+\textit{Software Quality Journal}, 26(2), 607--656. [PS3]
+
+\item Mendes, E. (2012).
+Using knowledge elicitation to improve web effort estimation: Lessons from six industrial case studies.
+In \textit{2012 34th International Conference on Software Engineering (ICSE)} (pp. 1112--1121). IEEE. [PS4]
+
+\item Mendes, E., Vaz, V. T., \& Muradas, F. (2015).
+An expert-based requirements effort estimation model using Bayesian networks.
+In \textit{International Conference on Software Quality} (pp. 79--93). Springer. [PS5]
+
+\item Mendes, E. (2013).
+Using expert-based Bayesian networks as decision support systems to improve project management of healthcare software projects.
+In \textit{International Conference on Software Engineering and Applications} (Vol. 2, pp. 389--399). SCITEPRESS. [PS6]
+
+\item Perkusich, M., Gorgônio, K. C., Almeida, H., \& Perkusich, A. (2017).
+Assisting the continuous improvement of Scrum projects using metrics and Bayesian networks.
+\textit{Journal of Software: Evolution and Process}, 29(6), e1835. [PS7]
+
+\item Freire, A., Perkusich, M., Saraiva, R., Almeida, H., \& Perkusich, A. (2018).
+A Bayesian networks-based approach to assess and improve the teamwork quality of agile teams.
+\textit{Information and Software Technology}, 100, 119--132. [PS8]
+
+\item Willamy, R., Nunes, J., Perkusich, M. B., Freire, A. S., Saraiva, R. M., Almeida, H. O., \& Perkusich, A. (2016).
+A method to build Bayesian networks based on artifacts and metrics to assess agile projects.
+In \textit{SEKE} (pp. 81--86). [PS9]
+
+\item Turic, M., Celar, S., Dragicevic, S., \& Vickovic, L. (2023).
+Advanced Bayesian network for task effort estimation in agile software development.
+\textit{Applied Sciences}, 13(16), 9465. [PS10]
+
+\item Kumar, C., \& Yadav, D. K. (2017).
+Software defects estimation using metrics of early phases of software development life cycle.
+\textit{International Journal of System Assurance Engineering and Management}, 8(Suppl 4), 2109--2117. [PS11]
+
+\item Schulz, T., Radliński, Ł., Gorges, T., \& Rosenstiel, W. (2013).
+Predicting the flow of defect correction effort using a Bayesian network model.
+\textit{Empirical Software Engineering}, 18(3), 435--477. [PS12]
+
+\item Misirli, A. T., \& Bener, A. B. (2014).
+Bayesian networks for evidence-based decision-making in software engineering.
+\textit{IEEE Transactions on Software Engineering}, 40(6), 533--554. [PS13]
+
+\item Berdún, L., Pace, J. A. D., Amandi, A., \& Campo, M. (2008).
+Assisting novice software designers by an expert designer agent.
+\textit{Expert Systems with Applications}, 34(4), 2772--2782. [PS14]
+
+\item Amasaki, S., Takagi, Y., Mizuno, O., \& Kikuno, T. (2005).
+Constructing a Bayesian belief network to predict final quality in embedded system development.
+\textit{IEICE Transactions on Information and Systems}, 88(6), 1134--1141. [PS15]
+
+\item Song, T. H., Yoon, K. A., \& Bae, D. H. (2007).
+An approach to probabilistic effort estimation for military avionics software maintenance by considering structural characteristics.
+In \textit{14th Asia-Pacific Software Engineering Conference (APSEC'07)} (pp. 406--413). IEEE. [PS16]
+
+\item Pérez-Miñana, E., \& Gras, J. J. (2006).
+Improving fault prediction using Bayesian networks for the development of embedded software applications.
+\textit{Software Testing, Verification and Reliability}, 16(3), 157--174. [PS18]
+
+\item Fenton, N., Neil, M., Marsh, W., Hearty, P., Radliński, Ł., \& Krause, P. (2008).
+On the effectiveness of early life cycle defect prediction with Bayesian Nets.
+\textit{Empirical Software Engineering}, 13(5), 499--537. [PS19]
+
+\item Fenton, N., Krause, P., \& Neil, M. (2002).
+Probabilistic modelling for software quality control.
+\textit{Journal of Applied Non-Classical Logics}, 12(2), 173--188. [PS20]
+
+\item Hearty, P., Fenton, N., Marquez, D., \& Neil, M. (2008).
+Predicting project velocity in XP using a learning dynamic Bayesian network model.
+\textit{IEEE Transactions on Software Engineering}, 35(1), 124--137. [PS22]
+
+\item Donohue, S. K., Dugan, J. B., \& Brown, C. L. (2005).
+Is my software ``good enough'' to release? A probabilistic assessment.
+In \textit{IEEE/NASA Software Engineering Workshop} (pp. 5--13). IEEE. [PS25]
+
+\item Wu, Y. P., Hu, Q. P., Poh, K. L., Ng, S. H., \& Xie, M. (2005).
+Bayesian networks modeling for software inspection effectiveness.
+In \textit{11th Pacific Rim International Symposium on Dependable Computing (PRDC'05)} (pp. 7). IEEE. [PS26]
+
+\item Pendharkar, P. C., Subramanian, G. H., \& Rodger, J. A. (2005).
+A probabilistic model for predicting software development effort.
+\textit{IEEE Transactions on Software Engineering}, 31(7), 615--624. [PS27]
+
+\item Stamelos, I., Angelis, L., Dimou, P., \& Sakellaris, E. (2003).
+On the use of Bayesian belief networks for the prediction of software productivity.
+\textit{Information and Software Technology}, 45(1), 51--60. [PS28]
+
+\item Beaver, J. M., Schiavone, G. A., \& Berrios, J. S. (2005).
+Predicting software suitability using a Bayesian belief network.
+In \textit{Fourth International Conference on Machine Learning and Applications (ICMLA'05)} (pp. 7). IEEE. [PS30]
+
+\item Perkusich, M., Medeiros, A., e Silva, L. C., Gorgônio, K. C., de Almeida, H. O., \& Perkusich, A. (2015).
+A Bayesian network approach to assist on the interpretation of software metrics.
+In \textit{Proceedings of the 30th Annual ACM Symposium on Applied Computing} (pp. 1498--1503). [PS31]
+
+\item Torkar, R., Awan, N. M., Alvi, A. K., \& Afzal, W. (2010).
+Predicting software test effort in iterative development using a dynamic Bayesian network.
+In \textit{21st IEEE International Symposium on Software Reliability Engineering}. IEEE. [PS32]
+
+\item Mohanta, S., Vinod, G., \& Mall, R. (2011).
+A technique for early prediction of software reliability based on design metrics.
+\textit{International Journal of System Assurance Engineering and Management}, 2(4), 261--281. [PS34]
+
+\item Mirarab, S., Hassouna, A., \& Tahvildari, L. (2007).
+Using Bayesian belief networks to predict change propagation in software systems.
+In \textit{15th IEEE International Conference on Program Comprehension (ICPC'07)} (pp. 177--188). IEEE. [PS36]
+
+\item Procaccino, J. D., Verner, J. M., Darter, M. E., \& Amadio, W. J. (2005).
+Toward predicting software development success from the perspective of practitioners: An exploratory Bayesian model.
+\textit{Journal of Information Technology}, 20(3), 187--200. [PS38]
+
+\item Durán, M., Juárez-Ramírez, R., Jiménez, S., \& Tona, C. (2020).
+User story estimation based on the complexity decomposition using Bayesian networks.
+\textit{Programming and Computer Software}, 46(8), 569--583. [PS39]
+
+\item Radu, L. D. (2019).
+Effort prediction in agile software development with Bayesian networks.
+In \textit{ICSOFT} (pp. 238--245). [PS40]
+
+\item Dantas, E., Neto, A. S., Perkusich, M., Almeida, H., \& Perkusich, A. (2021).
+Using Bayesian networks to support managing technological risk on software projects.
+In \textit{ISE (Brazilian Workshop on Intelligent Software Engineering)} (pp. 1--6). SBC. [PS41]
+
+\item Manzano, M., Ayala, C., Gómez, C., Abherve, A., Franch, X., \& Mendes, E. (2021).
+A method to estimate software strategic indicators in software development: An industrial application.
+\textit{Information and Software Technology}, 129, 106433. [PS42]
+
+\item Handhika, T., Sutanto, Y., Juarna, A., \& Mutiara, A. B. (2021).
+Bayesian analysis in predicting the success rate of the Scrum-based software development project under stochastic environment. [PS43]
+
+\item Fatima, R., Zeshan, F., Ahmad, A., Hamid, M., Filali, I., Alhussan, A. A., \& Abdallah, H. A. (2023).
+Requirement change prediction model for small software systems.
+\textit{Computers}, 12(8), 164. [PS44]
+
+\item Nguyen, N. T., Huynh, Q. T., \& Vu, T. H. G. (2018).
+A Bayesian critical path method for managing common risks in software project scheduling.
+In \textit{International Symposium on Information and Communication Technology} (pp. 382--388). [PS45]
+
+\item Salama, M., \& Bahsoon, R. (2017).
+Analysing and modelling runtime architectural stability for self-adaptive software.
+\textit{Journal of Systems and Software}, 133, 95--112. [PS46]
+
+\item Saraiva, R., Medeiros, A., Perkusich, M., Valadares, D., Gorgonio, K. C., Perkusich, A., \& Almeida, H. (2020).
+A Bayesian networks-based method to analyze the validity of the data of software measurement programs.
+\textit{IEEE Access}, 8, 198801--198821. [PS47]
+
+\item Malak, G., Sahraoui, H., Badri, L., \& Badri, M. (2010).
+Modeling web quality using a probabilistic approach: An empirical validation.
+\textit{ACM Transactions on the Web (TWEB)}, 4(3), 1--31. [PS48]
+
+\item Lamersdorf, A., \& Münch, J. (2010).
+A multi-criteria distribution model for global software development projects.
+\textit{Journal of the Brazilian Computer Society}, 16(2), 97--115. [PS49]
+
+\item Khanna, M., Chauhan, N., Sharma, D. K., \& Toofani, A. (2017).
+Test case prioritisation during web application testing.
+\textit{International Journal of Computer Applications in Technology}, 56(3), 230--243. [PS51]
+
+\item Eom, H. S., Park, G. Y., Jang, S. C., Son, H. S., \& Kang, H. G. (2013).
+V\&V-based remaining fault estimation model for safety--critical software of a nuclear power plant.
+\textit{Annals of Nuclear Energy}, 51, 38--49. [PS53]
+
+\item Chatterjee, S., \& Maji, B. (2018).
+A Bayesian belief network based model for predicting software faults in early phase of software development process.
+\textit{Applied Intelligence}, 48(8), 2214--2228. [PS54]
+
+\item Chatzimparmpas, A., \& Bibi, S. (2019).
+Maintenance process modeling and dynamic estimations based on Bayesian networks and association rules.
+\textit{Journal of Software: Evolution and Process}, 31(9), e2163. [PS55]
+
+\item Wiesweg, F., Vogelsang, A., \& Mendez, D. (2020).
+Data-driven risk management for requirements engineering: An automated approach based on Bayesian networks.
+In \textit{IEEE Requirements Engineering Conference (RE)} (pp. 125--135). IEEE. [PS57]
+
+\item Kalinowski, M., Curty, P., Paes, A., Ferreira, A., Spínola, R., Fernández, D. M., \ldots\ \& Wagner, S. (2017).
+Supporting defect causal analysis in practice with cross-company data on causes of requirements engineering problems.
+In \textit{2017 IEEE/ACM 39th International Conference on Software Engineering: Software Engineering in Practice Track (ICSE-SEIP)} (pp. 223--232). IEEE. [PS58]
+
+\item Hu, Y., Mo, X., Zhang, X., Zeng, Y., Du, J., \& Xie, K. (2012).
+Intelligent analysis model for outsourced software project risk using constraint-based Bayesian network.
+\textit{J. Softw.}, 7(2), 440--449. [PS59]
+
+\item Hu, Y., Zhang, X., Ngai, E. W. T., Cai, R., \& Liu, M. (2013).
+Software project risk analysis using Bayesian networks with causality constraints.
+\textit{Decision Support Systems}, 56, 439--449. [PS60]
+
+\item Bibi, S., Stamelos, I., \& Angelis, L. (2003).
+Bayesian belief networks as a software productivity estimation tool.
+In \textit{Balkan Conference in Informatics} (Thessaloniki, Greece). [PS61]
+
+\item Hamdan, K., Bibi, S., Angelis, L., \& Stamelos, I. (2009).
+A Bayesian belief network cost estimation model that incorporates cultural and project leadership factors.
+In \textit{IEEE Symposium on Industrial Electronics \& Applications} (Vol. 2, pp. 985--989). IEEE. [PS62]
+
+\item Mendes, E. (2007).
+The use of a Bayesian network for web effort estimation.
+In \textit{International Conference on Web Engineering} (pp. 90--104). Springer. [PS63]
+
+\item Wang, X., Wu, C., \& Ma, L. (2010).
+Software project schedule variance prediction using Bayesian network.
+In \textit{2010 IEEE International Conference on Advanced Management Science (ICAMS 2010)} (Vol. 2, pp. 26--30). IEEE. [PS64]
+
+\item Pendharkar, P. C., \& Rodger, J. A. (2010).
+Probabilistic and analytical estimation of software development team size.
+\textit{International Journal of Hybrid Intelligent Systems}, 7(2), 137--153. [PS65]
+
+\item Fuentetaja, R., Borrajo, D., López, C. L., \& Ocón, J. (2013).
+Multi-step generation of Bayesian networks models for software projects estimations.
+\textit{International Journal of Computational Intelligence Systems}, 6(5), 796--821. [PS66]
+
+\end{itemize}
+\normalsize
