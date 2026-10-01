@@ -1,8 +1,8 @@
-# Artifact provenance
+# Data and artifact inventory
 
-## Archived workbooks
+## Review workbooks
 
-Source: [Zenodo record 19720517](https://zenodo.org/records/19720517), DOI [10.5281/zenodo.19720517](https://doi.org/10.5281/zenodo.19720517). Files copied without modification; MD5 hashes verified against the record metadata.
+The following research records are available in `data/review/`. The checksums identify the exact workbook versions included in this repository.
 
 | File | Bytes | MD5 |
 | --- | ---: | --- |
@@ -10,11 +10,11 @@ Source: [Zenodo record 19720517](https://zenodo.org/records/19720517), DOI [10.5
 | Parsifal Report.xls | 4905472 | `b2a1b493985efebe14c6d3db32627ce1` |
 | BN Methodologies - Review.xlsx | 289237 | `5839708b3aeb87c25ab55698c8dfe669` |
 
-The source deposit uses the earlier protocol-oriented title. Its original files have not been renamed or rewritten. Current terminology is explained in the repository README and companion document.
+Workbook contents and labels are retained as recorded. Current terminology is explained in the repository README and companion document.
 
 ## Current assessment-workbook snapshot
 
-`data/current/BNs in SE - Data extraction.xlsx` is an author-provided Excel export of [BNs in SE - Data extraction](https://docs.google.com/spreadsheets/d/1IqoDZ64jCjjDv4pjNnL_Difuu59Jy0btVZ2oyRQO2Ag/edit), supplied on 30 September 2026. It contains the `QA criteria`, `QA results`, `Data extraction`, and `Final set` worksheets. It is an additional snapshot, not a replacement for the archived Zenodo workbook.
+`data/current/BNs in SE - Data extraction.xlsx` is an author-provided Excel export of [BNs in SE - Data extraction](https://docs.google.com/spreadsheets/d/1IqoDZ64jCjjDv4pjNnL_Difuu59Jy0btVZ2oyRQO2Ag/edit), supplied on 30 September 2026. It contains the `QA criteria`, `QA results`, `Data extraction`, and `Final set` worksheets. It complements the checklist-application records in `data/review/`.
 
 Size: 530254 bytes. SHA-256: `3a5db7a4d8558d239ec857e4f52246895e324788e03367a6c3dc86e5bfca12be`.
 

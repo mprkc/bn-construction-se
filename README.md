@@ -8,10 +8,10 @@ The resources connect BN construction activities to methods and examples reporte
 
 - [Companion document (PDF)](supplement/bn-supplement.pdf): mapping and agreement records (S1), full method descriptions and application examples (S2), and the activity-indexed catalog, scoring tables, and reference studies (S3).
 - [LaTeX source](supplement/bn-supplement.tex) and [figures](supplement/figures): editable sources for the companion document.
-- [BNs in SE - Data extraction.xlsx](data/current/BNs%20in%20SE%20-%20Data%20extraction.xlsx): current author-provided snapshot of the rubric, assessment results, method extraction with supporting excerpts, and retained study set. The three archived files below remain unchanged for provenance.
-- [Checklist Application.xlsx](data/zenodo-19720517/Checklist%20Application.xlsx): the assessment and extraction workbook from the archived package.
-- [BN Methodologies - Review.xlsx](data/zenodo-19720517/BN%20Methodologies%20-%20Review.xlsx): the cross-domain methodology review and mapping records.
-- [Parsifal Report.xls](data/zenodo-19720517/Parsifal%20Report.xls): the review-management export.
+- [BNs in SE - Data extraction.xlsx](data/current/BNs%20in%20SE%20-%20Data%20extraction.xlsx): current author-provided snapshot of the rubric, assessment results, method extraction with supporting excerpts, and retained study set.
+- [Checklist Application.xlsx](data/review/Checklist%20Application.xlsx): the assessment and extraction workbook.
+- [BN Methodologies - Review.xlsx](data/review/BN%20Methodologies%20-%20Review.xlsx): the cross-domain methodology review and mapping records.
+- [Parsifal Report.xls](data/review/Parsifal%20Report.xls): the review-management export.
 
 ## Study identifiers and scores
 
@@ -23,11 +23,11 @@ The conceptual checklist has eight activities. The operational assessment uses s
 
 Each phase contributes at most 1, giving a maximum total of 3. The catalog retains studies with a total of at least 1.5. Scores characterize what studies report, not independently established construction quality, predictive performance, or decision usefulness.
 
-## Provenance and preservation
+## Data and documentation
 
-All three files in `data/zenodo-19720517/` are unchanged copies of the files in [Zenodo record 19720517](https://zenodo.org/records/19720517), published on 24 April 2026, DOI [10.5281/zenodo.19720517](https://doi.org/10.5281/zenodo.19720517). The original deposit remains available as an archive. The [provenance record](PROVENANCE.md) lists file sizes and checksums.
+The `data/review/` directory contains the methodology-review, checklist-application, and review-management records. The `data/current/` directory provides the current assessment-workbook snapshot. The [data inventory](DATA.md) lists their contents, file sizes, and checksums.
 
-Historical workbook labels, including references to a “protocol,” have been preserved to avoid altering the original research records. The current resource is presented as a checklist and catalog. The companion preserves detailed method descriptions and study-level tables separately from the main article.
+Workbook labels, including references to a “protocol,” are retained as recorded. The current resource is presented as a checklist and catalog. The companion provides detailed method descriptions and study-level tables separately from the main article.
 
 One reference-list inconsistency has been corrected in the companion: PS17 (S25, *Scenario-based assessment of nonfunctional requirements*) is not listed as a maximum-score model-validation reference study, because its recorded Q3.1 score is 0.0. Its other catalog entries and all original workbook scores are unchanged.
 
@@ -46,4 +46,4 @@ Alternatively, import the contents of `supplement/` into an Overleaf project and
 
 ## Licensing
 
-The unchanged files copied from Zenodo retain the deposit's [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license. This repository does not assign a new license to the additional companion text or figures. Third-party publications and quoted excerpts remain subject to their respective rights.
+The three files in `data/review/` retain their [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/) license. This repository does not assign a new license to the additional companion text or figures. Third-party publications and quoted excerpts remain subject to their respective rights.
